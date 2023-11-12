@@ -23,6 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # Added by BDS 12-11-23
-# /socket-io-client/node_modules
-# /socket-io-seerver/node_modules
+/socket-io-client/node_modules
+/socket-io-seerver/node_modules
 # .env
