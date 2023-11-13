@@ -7,9 +7,12 @@ export default function ClientComponent() {
 
   useEffect(() => {
     const socket = socketIOClient(ENDPOINT)
+
     socket.on("FromAPI", (data) => {
+      console.log(socket.id)
       setResponse(data)
     })
+
     // CLEAN UP THE EFFECT
     return () => socket.disconnect()
     //
