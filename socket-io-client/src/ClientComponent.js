@@ -1,13 +1,12 @@
 import React, { useEffect, useState, memo } from "react"
 import socketIOClient from "socket.io-client"
-
-const EXPRESS_SERVER_ENDPOINT = "http://127.0.0.1:4001"
+import * as myConstClass from "./constants.js"
 
 const ClientComponent = () => {
   const [response, setResponse] = useState("")
 
   useEffect(() => {
-    const socket = socketIOClient(EXPRESS_SERVER_ENDPOINT, {
+    const socket = socketIOClient(myConstClass.EXPRESS_SERVER_ENDPOINT, {
       autoConnect: false,
     })
 
@@ -15,7 +14,6 @@ const ClientComponent = () => {
     socket.connect()
 
     socket.on("FromAPI", (data) => {
-      // console.log(socket.id)
       setResponse(data)
     })
 
